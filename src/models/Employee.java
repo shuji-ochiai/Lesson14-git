@@ -15,19 +15,19 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name = "getAllEmployees",
-            query = "select e from Employee as e order by e.id desc"
+            query = "SELECT e FROM Employee AS e ORDER BY e.id DESC"
             ),
     @NamedQuery(
             name = "getEmployeesCount",
-            query = "select count(e) from Employee as e"
+            query = "SELECT COUNT(e) FROM Employee AS e"
             ),
     @NamedQuery(
             name = "checkRegisteredCode",
-            query = "select count(e) from Employee as e where e.code = :code"
+            query = "SELECT COUNT(e) FROM Employee AS e WHERE e.code = :code"
             ),
     @NamedQuery(
             name = "checkLoginCodeAndPassword",
-            query = "select e from Employee as e where e.delete_flag = 0 and e.code = :code and e.password = :pass"
+            query = "SELECT e FROM Employee AS e WHERE e.delete_flag = 0 AND e.code = :code AND e.password = :pass"
             )
 })
 @Entity
@@ -53,7 +53,7 @@ public class Employee {
     private Timestamp created_at;
 
     @Column(name = "updated_at", nullable = false)
-    private Timestamp update_at;
+    private Timestamp updated_at;
 
     @Column(name = "delete_flag", nullable = false)
     private Integer delete_flag;
@@ -106,12 +106,12 @@ public class Employee {
         this.created_at = created_at;
     }
 
-    public Timestamp getUpdate_at() {
-        return update_at;
+    public Timestamp getUpdated_at() {
+        return updated_at;
     }
 
-    public void setUpdate_at(Timestamp update_at) {
-        this.update_at = update_at;
+    public void setUpdated_at(Timestamp updated_at) {
+        this.updated_at = updated_at;
     }
 
     public Integer getDelete_flag() {

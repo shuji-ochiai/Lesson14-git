@@ -15,7 +15,7 @@ public class EncryptUtil {
             try {
                 bytes = MessageDigest.getInstance("SHA-256").digest(password.getBytes());
                 ret = DatatypeConverter.printHexBinary(bytes);
-            } catch(NoSuchAlgorithmException ex){}
+            } catch(NoSuchAlgorithmException ex) {}
         }
 
         return ret;
